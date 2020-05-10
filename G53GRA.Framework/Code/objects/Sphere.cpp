@@ -57,7 +57,6 @@ void Sphere::octhedron()
 	glTranslatef(0.f, 0.f, -35.f);
 	glRotatef(15.0, 0.1, 0.1, 0.0);
 
-	glColor3f(0.0f, 0.0f, 0.0f);
 	glBegin(GL_TRIANGLES);
 
 	int depth = 6;

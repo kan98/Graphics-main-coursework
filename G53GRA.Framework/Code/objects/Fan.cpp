@@ -10,15 +10,18 @@ void Fan::Display()
 	glPushMatrix();
 
 	glTranslatef(50.0f, -40.0f, -300.0f);
-	glColor3ub(0, 0, 0);
+	glColor3ub(255, 255, 255);
+
+	int metalTx = Scene::GetTexture("./Textures/metal.bmp");
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, metalTx);
 
 	glRotatef(zrot, 0.0f, 0.0f, 1.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
 	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
 
 	glScalef(scale, scale, scale);
-
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // delete later
 
 	glDisable(GL_CULL_FACE);
 
@@ -32,7 +35,11 @@ void Fan::Display()
 	Table table;
 	table.cylinder(700, 30);
 
-	glTranslatef(25.0f, 725.0f, 25.0f);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
+	glColor3ub(55, 55, 55);
+
+	glTranslatef(10.0f, 725.0f, 35.f);
 	Sphere sphere(50);
 	sphere.Display();
 	
@@ -87,6 +94,13 @@ void Fan::Display()
 
 	glLineWidth(1);
 
+	int bladeTx = Scene::GetTexture("./Textures/plastic.bmp");
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, bladeTx);
+
+	glColor3ub(255, 255, 255);
+
 	// Fan Blades
 	glRotatef(time, 0.0f, 0.0f, 1.0f);
 	for (int i = 0; i < 6; i++) {
@@ -95,6 +109,9 @@ void Fan::Display()
 	}
 	glPopMatrix();
 
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
+
 	glEnable(GL_CULL_FACE);
 
 	glPopMatrix();
@@ -102,16 +119,6 @@ void Fan::Display()
 
 void fanBlade() {
 	glPushMatrix();
-
-	glColor3ub(255, 255, 255);
-
-	int metalTx = Scene::GetTexture("./Textures/metal-blade.bmp");
-	glEnable(GL_TEXTURE_2D);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-	glBindTexture(GL_TEXTURE_2D, metalTx);
 
 	glBegin(GL_TRIANGLES);
 	glNormal3f(35, 35, 0);
@@ -131,11 +138,6 @@ void fanBlade() {
 
 	drawCircle(50, GL_POLYGON);
 
-	glBindTexture(GL_TEXTURE_2D, 0);
-	glDisable(GL_TEXTURE_2D);
-
-	glColor3ub(0, 0, 0);
-
 	glPopMatrix();
 }
 
@@ -154,7 +156,7 @@ void drawCircle(int scale, GLenum drawType)
 
 void Fan::Update(const double& deltaTime)
 {
-	time += 5.0f;
+	time += speed;
 }
 
 void Fan::HandleKey(unsigned char key, int state, int x, int y)
@@ -162,10 +164,14 @@ void Fan::HandleKey(unsigned char key, int state, int x, int y)
 	switch (key)
 	{
 	case 'i':
-		scale += 0.1f;
+		if (speed < 20.f) {
+			speed += 0.5f;
+		}
 		break;
 	case 'k':
-		scale -= 0.1f;
+		if (speed > 0.f) {
+			speed -= 0.5f;
+		}
 		break;
 	default:
 		break;

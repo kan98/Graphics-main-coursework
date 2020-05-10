@@ -26,3 +26,7 @@ private:
 	float xrot, yrot, zrot;
 	float scale;
 };
+
+void keys();
+
+void pedal();

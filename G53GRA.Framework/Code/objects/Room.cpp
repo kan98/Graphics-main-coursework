@@ -97,10 +97,8 @@ void Room::Display()
 
 void Room::Update(const double& deltaTime)
 {
-
 }
 
 void Room::HandleKey(unsigned char key, int state, int x, int y)
 {
-
 }

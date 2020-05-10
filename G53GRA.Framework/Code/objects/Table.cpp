@@ -14,15 +14,28 @@ void Table::cylinder(float h, float r)
 	{
 		glBegin(GL_QUADS);          // new QUAD
 			// Create first points
-		glVertex3f(x, h, z);    // top
-		glVertex3f(x, 0.f, z);  // bottom
+		glNormal3f(x, h, z);    // top
+		glTexCoord2f(0.f, 1.f);
+		glVertex3f(x, h, z);
+
+		glNormal3f(x, 0.f, z);  // bottom
+		glTexCoord2f(0.f, 0.f);
+		glVertex3f(x, 0.f, z);
+
 		// Iterate around circle
+		const float tc = (t / (float)(2 * M_PI));
+
 		t += res;               // add increment to angle
 		x = r * cos(t);           // move x and z around circle
 		z = r * sin(t);
 		// Close quad
-		glVertex3f(x, 0.f, z);  // bottom
-		glVertex3f(x, h, z);    // top
+		glNormal3f(x, 0.f, z);  // bottom
+		glTexCoord2f(tc, 0.f);
+		glVertex3f(x, 0.f, z);
+
+		glNormal3f(x, h, z);    // top
+		glTexCoord2f(tc, 1.f);
+		glVertex3f(x, h, z);
 		glEnd();                    // end shape
 	} while (t <= 2 * M_PI);        // for a full circle (360 degrees)
 }
@@ -31,8 +44,8 @@ void Table::Display()
 {
 	glPushMatrix();
 
-	glTranslatef(70.0f, 0.0f, -60.0f);
-	glColor3ub(150, 150, 150);
+	glTranslatef(70.0f, 20.0f, -60.0f);
+	glColor3ub(255, 255, 255);
 
 	glRotatef(zrot, 0.0f, 0.0f, 1.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
@@ -44,8 +57,6 @@ void Table::Display()
 
 	int tableTx = Scene::GetTexture("./Textures/table-wood.bmp");
 	glEnable(GL_TEXTURE_2D);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 	glBindTexture(GL_TEXTURE_2D, tableTx);
 
@@ -157,30 +168,33 @@ void Table::Display()
 	glVertex3d(-250, 70, 400);
 	glEnd();
 
-	glBindTexture(GL_TEXTURE_2D, 0);
-	glDisable(GL_TEXTURE_2D);
+	int legsTx = Scene::GetTexture("./Textures/legs.bmp");
+	glEnable(GL_TEXTURE_2D);
 
-	glColor3ub(0, 0, 0);
+	glBindTexture(GL_TEXTURE_2D, legsTx);
 
 	glPushMatrix();
 	glTranslatef(200.0f, 0.0f, 350.0f);
-	cylinder(-200, 30);
+	cylinder(-300, 30);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(-200.0f, 0.0f, 350.0f);
-	cylinder(-200, 30);
+	cylinder(-300, 30);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(200.0f, 0.0f, -350.0f);
-	cylinder(-200, 30);
+	cylinder(-300, 30);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(-200.0f, 0.0f, -350.0f);
-	cylinder(-200, 30);
+	cylinder(-300, 30);
 	glPopMatrix();
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
 
 	glEnable(GL_CULL_FACE);
 
@@ -189,20 +203,8 @@ void Table::Display()
 
 void Table::Update(const double& deltaTime)
 {
-	//zrot += 10.0f * static_cast<float>(deltaTime);
 }
 
 void Table::HandleKey(unsigned char key, int state, int x, int y)
 {
-	switch (key)
-	{
-	case 'i':
-		scale += 0.1f;
-		break;
-	case 'k':
-		scale -= 0.1f;
-		break;
-	default:
-		break;
-	}
 }

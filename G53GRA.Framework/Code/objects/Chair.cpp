@@ -3,35 +3,95 @@
 Chair::Chair() : xrot(0.0f), yrot(0.0f), zrot(0.0f), scale(0.2f) {
 }
 
-void Chair::chairLegs() {
+void Chair::chairLegs()
+{
 	glBegin(GL_POLYGON);
+	glNormal3f(0, 50, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(0, 50, 100);
+
+	glNormal3f(0, 50, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(0, 50, -100);
+
+	glNormal3f(-20, 50, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-20, 50, -100);
+
+	glNormal3f(-20, 50, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-20, 50, 100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(0, 50, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(0, 50, 100);
+
+	glNormal3f(0, 0, 100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(0, 0, 100);
+
+	glNormal3f(-20, 0, 100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-20, 0, 100);
+
+	glNormal3f(-20, 50, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-20, 50, 100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(0, 50, -100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(0, 50, -100);
+
+	glNormal3f(0, 0, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(0, 0, -100);
+
+	glNormal3f(-20, 0, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-20, 0, -100);
+
+	glNormal3f(-20, 50, -100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-20, 50, -100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(-20, 50, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-20, 50, 100);
+
+	glNormal3f(-20, 0, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-20, 0, 100);
+
+	glNormal3f(-20, 0, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-20, 0, -100);
+
+	glNormal3f(-20, 50, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-20, 50, -100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(0, 50, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(0, 50, 100);
+
+	glNormal3f(0, 0, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(0, 0, 100);
+
+	glNormal3f(0, 0, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(0, 0, -100);
+
+	glNormal3f(0, 50, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(0, 50, -100);
 	glEnd();
 }
@@ -40,8 +100,13 @@ void Chair::Display()
 {
 	glPushMatrix();
 
+	int leatherTx = Scene::GetTexture("./Textures/leather.bmp");
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, leatherTx);
+
 	glTranslatef(150.0f, 0.0f, -50.0f);
-	glColor3ub(0, 0, 0);
+	glColor3ub(255, 255, 255);
 
 	glRotatef(zrot, 0.0f, 0.0f, 1.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
@@ -53,45 +118,120 @@ void Chair::Display()
 
 	// Where you sit on
 	glPushMatrix();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(-100, -1, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-100, -1, 100);
+
+	glNormal3f(-100, -1, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-100, -1, -100);
+
+	glNormal3f(100, -1, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(100, -1, -100);
+
+	glNormal3f(100, -1, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(100, -1, 100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(-100, 30, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-100, 30, 100);
+
+	glNormal3f(-100, 30, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-100, 30, -100);
+
+	glNormal3f(100, 30, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(100, 30, -100);
+
+	glNormal3f(100, 30, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(100, 30, 100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(-100, -1, 100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-100, -1, 100);
+
+	glNormal3f(-100, 30, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-100, 30, 100);
+
+	glNormal3f(100, 30, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(100, 30, 100);
+
+	glNormal3f(100, -1, 100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(100, -1, 100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(-100, -1, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-100, -1, -100);
+
+	glNormal3f(-100, 30, -100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-100, 30, -100);
+
+	glNormal3f(100, 30, -100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(100, 30, -100);
+
+	glNormal3f(100, -1, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(100, -1, -100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(100, -1, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(100, -1, 100);
+
+	glNormal3f(100, 30, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(100, 30, 100);
+
+	glNormal3f(100, 30, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(100, 30, -100);
+
+	glNormal3f(100, -1, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(100, -1, -100);
 	glEnd();
+
 	glBegin(GL_POLYGON);
+	glNormal3f(-100, -1, 100);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-100, -1, 100);
+
+	glNormal3f(-100, 30, 100);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-100, 30, 100);
+
+	glNormal3f(-100, 30, -100);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-100, 30, -100);
+
+	glNormal3f(-100, -1, -100);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-100, -1, -100);
 	glEnd();
 
 	//legs
 	glPopMatrix();
+
+	int legsTx = Scene::GetTexture("./Textures/legs.bmp");
+	glBindTexture(GL_TEXTURE_2D, legsTx);
 
 	glPushMatrix();
 	glRotated(90, 1, 0, 0);
@@ -120,34 +260,39 @@ void Chair::Display()
 	glTranslated(100, 30, 0);
 	glRotated(-15, 0, 0, 1);
 	glRotated(90, 0, 1, 0);
+
+	glBindTexture(GL_TEXTURE_2D, leatherTx);
+
 	glBegin(GL_POLYGON);
+	glNormal3f(-100, 0, 0);
+	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-100, 0, 0);
+
+	glNormal3f(-100, 250, 0);
+	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-100, 250, 0);
+
+	glNormal3f(100, 250, 0);
+	glTexCoord2f(1.f, 1.f);
 	glVertex3d(100, 250, 0);
+
+	glNormal3f(100, 0, 0);
+	glTexCoord2f(1.f, 0.f);
 	glVertex3d(100, 0, 0);
 	glEnd();
 
 	glEnable(GL_CULL_FACE);
 
 	glPopMatrix();
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
 }
 
 void Chair::Update(const double& deltaTime)
 {
-	//zrot += 10.0f * static_cast<float>(deltaTime);
 }
 
 void Chair::HandleKey(unsigned char key, int state, int x, int y)
 {
-	switch (key)
-	{
-	case 'i':
-		scale += 0.1f;
-		break;
-	case 'k':
-		scale -= 0.1f;
-		break;
-	default:
-		break;
-	}
 }

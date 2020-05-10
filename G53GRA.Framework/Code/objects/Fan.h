@@ -26,6 +26,7 @@ private:
 	float xrot, yrot, zrot;
 	float scale;
 	float time = 0.0;
+	float speed = 5.0f;
 };
 
 void drawCircle(int scale, GLenum drawType);
