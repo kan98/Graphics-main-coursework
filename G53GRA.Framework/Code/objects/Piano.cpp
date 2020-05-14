@@ -276,14 +276,14 @@ void Piano::Display()
 
 	glPushMatrix();
 	glTranslatef(-150.f, 0.f, 0.f);
-	pedal();
+	pedal(pedalOne);
 	glPopMatrix();
 
-	pedal();
+	pedal(pedalTwo);
 
 	glPushMatrix();
 	glTranslatef(150.f, 0.f, 0.f);
-	pedal();
+	pedal(pedalThree);
 	glPopMatrix();
 
 	glBindTexture(GL_TEXTURE_2D, pianoTx);
@@ -434,13 +434,35 @@ void keys() {
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(750, 20, -500);
 	glEnd();
+
+	int sideKeysTx = Scene::GetTexture("./Textures/piano-keys-side.bmp");
+	glBindTexture(GL_TEXTURE_2D, sideKeysTx);
+
+	glBegin(GL_QUADS);
+	glNormal3f(-750, 0, -675);
+	glTexCoord2f(0.f, 1.f);
+	glVertex3d(-750, 0, -675);
+
+	glNormal3f(-750, 20, -675);
+	glTexCoord2f(0.f, 0.f);
+	glVertex3d(-750, 20, -675);
+
+	glNormal3f(750, 20, -675);
+	glTexCoord2f(1.f, 0.f);
+	glVertex3d(750, 20, -675);
+
+	glNormal3f(750, 0, -675);
+	glTexCoord2f(1.f, 1.f);
+	glVertex3d(750, 0, -675);
+	glEnd();
 }
 
-void pedal() {
+void pedal(int pressed) {
+	int height = -30 * pressed;
 	glBegin(GL_QUADS);
-	glNormal3f(-40, 0, -150);
+	glNormal3f(-40, height, -150);
 	glTexCoord2f(0.f, 0.f);
-	glVertex3d(-40, 0, -150);
+	glVertex3d(-40, height, -150);
 
 	glNormal3f(-30, 0, 0);
 	glTexCoord2f(0.f, 1.f);
@@ -450,19 +472,19 @@ void pedal() {
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(30, 0, 0);
 
-	glNormal3f(40, 0, -150);
+	glNormal3f(40, height, -150);
 	glTexCoord2f(1.f, 0.f);
-	glVertex3d(40, 0, -150);
+	glVertex3d(40, height, -150);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-40, -20, -150);
+	glNormal3f(-40, -20 + height, -150);
 	glTexCoord2f(0.f, 0.f);
-	glVertex3d(-40, -20, -150);
+	glVertex3d(-40, -20 + height, -150);
 
-	glNormal3f(-30, 0, -150);
+	glNormal3f(-30, height, -150);
 	glTexCoord2f(0.f, 1.f);
-	glVertex3d(-30, 0, -150);
+	glVertex3d(-30, height, -150);
 
 	glNormal3f(-30, 0, 0);
 	glTexCoord2f(1.f, 1.f);
@@ -474,13 +496,13 @@ void pedal() {
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(40, -20, -150);
+	glNormal3f(40, -20 + height, -150);
 	glTexCoord2f(0.f, 0.f);
-	glVertex3d(40, -20, -150);
+	glVertex3d(40, -20 + height, -150);
 
-	glNormal3f(30, 0, -150);
+	glNormal3f(30, height, -150);
 	glTexCoord2f(0.f, 1.f);
-	glVertex3d(30, 0, -150);
+	glVertex3d(30, height, -150);
 
 	glNormal3f(30, 0, 0);
 	glTexCoord2f(1.f, 1.f);
@@ -492,27 +514,27 @@ void pedal() {
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-40, -20, -150);
+	glNormal3f(-40, -20 + height, -150);
 	glTexCoord2f(0.f, 0.f);
-	glVertex3d(-40, -20, -150);
+	glVertex3d(-40, -20 + height, -150);
 
-	glNormal3f(-40, 0, -150);
+	glNormal3f(-40, height, -150);
 	glTexCoord2f(0.f, 1.f);
-	glVertex3d(-40, 0, -150);
+	glVertex3d(-40, height, -150);
 
-	glNormal3f(40, 0, -150);
+	glNormal3f(40, height, -150);
 	glTexCoord2f(1.f, 1.f);
-	glVertex3d(40, 0, -150);
+	glVertex3d(40, height, -150);
 
-	glNormal3f(40, -20, -150);
+	glNormal3f(40, -20 + height, -150);
 	glTexCoord2f(1.f, 0.f);
-	glVertex3d(40, -20, -150);
+	glVertex3d(40, -20 + height, -150);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-40, -20, -150);
+	glNormal3f(-40, -20 + height, -150);
 	glTexCoord2f(0.f, 0.f);
-	glVertex3d(-40, -20, -150);
+	glVertex3d(-40, -20 + height, -150);
 
 	glNormal3f(-30, -20, 0);
 	glTexCoord2f(0.f, 1.f);
@@ -522,16 +544,53 @@ void pedal() {
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(30, -20, 0);
 
-	glNormal3f(40, -20, -150);
+	glNormal3f(40, -20 + height, -150);
 	glTexCoord2f(1.f, 0.f);
-	glVertex3d(40, -20, -150);
+	glVertex3d(40, -20 + height, -150);
 	glEnd();
 }
 
 void Piano::Update(const double& deltaTime)
 {
+	time += deltaTime;
+	if (!userControl && time > 0.75) {
+		pedalOne = rand() % 2;
+		pedalTwo = rand() % 2;
+		pedalThree = rand() % 2;
+
+		time = 0;
+	}
 }
 
 void Piano::HandleKey(unsigned char key, int state, int x, int y)
 {
+	switch (key)
+	{
+	case '1':
+		userControl = 1;
+
+		pedalOne = 0;
+		pedalTwo = 0;
+		pedalThree = 1;
+		break;
+	case '2':
+		userControl = 1;
+
+		pedalOne = 0;
+		pedalTwo = 1;
+		pedalThree = 0;
+		break;
+	case '3':
+		userControl = 1;
+
+		pedalOne = 1;
+		pedalTwo = 0;
+		pedalThree = 0;
+		break;
+	case '4':
+		userControl = 0;
+		break;
+	default:
+		break;
+	}
 }

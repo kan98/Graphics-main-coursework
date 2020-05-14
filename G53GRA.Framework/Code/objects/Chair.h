@@ -10,7 +10,7 @@ class Chair :
 	public Input
 {
 public:
-	Chair();
+	Chair(int chairNo);
 	void chairLegs();
 	~Chair() {};
 
@@ -26,4 +26,5 @@ public:
 private:
 	float xrot, yrot, zrot;
 	float scale;
+	int chairNo;
 };

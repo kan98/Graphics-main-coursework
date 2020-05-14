@@ -25,8 +25,13 @@ public:
 private:
 	float xrot, yrot, zrot;
 	float scale;
+	int pedalOne = 0;
+	int pedalTwo = 0;
+	int pedalThree = 0;
+	int userControl = 0;
+	double time = 0;
 };
 
 void keys();
 
-void pedal();
+void pedal(int pressed);

@@ -6,14 +6,14 @@ Table::Table() : xrot(0.0f), yrot(0.0f), zrot(0.0f), scale(0.2f) {
 
 void Table::cylinder(float h, float r)
 {
-	float res = 0.1 * M_PI;           // resolution (in radians: equivalent to 18 degrees)
-	float x = r, z = 0.f;           // initialise x and z on right of cylinder centre
-	float t = 0.f;                  // initialise angle as 0
+	float res = 0.1 * M_PI;
+	float x = r, z = 0.f;
+	float t = 0.f;
 
 	do
 	{
-		glBegin(GL_QUADS);          // new QUAD
-			// Create first points
+		glBegin(GL_QUADS);
+
 		glNormal3f(x, h, z);    // top
 		glTexCoord2f(0.f, 1.f);
 		glVertex3f(x, h, z);
@@ -36,15 +36,15 @@ void Table::cylinder(float h, float r)
 		glNormal3f(x, h, z);    // top
 		glTexCoord2f(tc, 1.f);
 		glVertex3f(x, h, z);
-		glEnd();                    // end shape
-	} while (t <= 2 * M_PI);        // for a full circle (360 degrees)
+		glEnd();
+	} while (t <= 2 * M_PI);        // for 360 degrees
 }
 
 void Table::Display()
 {
 	glPushMatrix();
 
-	glTranslatef(70.0f, 20.0f, -60.0f);
+	glTranslatef(135.0f, 20.0f, -60.0f);
 	glColor3ub(255, 255, 255);
 
 	glRotatef(zrot, 0.0f, 0.0f, 1.0f);

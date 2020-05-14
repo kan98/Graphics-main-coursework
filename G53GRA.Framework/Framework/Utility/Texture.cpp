@@ -135,7 +135,7 @@ int Texture::GetTexture(string fileName)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 	// Upload texture data
-	glTexImage2D(GL_TEXTURE_2D, static_cast<GLint>(0), infoHeader.biBitCount == 32 ? GL_RGBA : GL_RGB,
+		glTexImage2D(GL_TEXTURE_2D, static_cast<GLint>(0), infoHeader.biBitCount == 32 ? GL_RGBA : GL_RGB,
 		static_cast<GLsizei>(infoHeader.biWidth), static_cast<GLsizei>(infoHeader.biHeight),
 		static_cast<GLint>(0), infoHeader.biBitCount == 32 ? GL_RGBA : GL_BGR_EXT, GL_UNSIGNED_BYTE,
 		static_cast<GLvoid*>(pixelBuffer));

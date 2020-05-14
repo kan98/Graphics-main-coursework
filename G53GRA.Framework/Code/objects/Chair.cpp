@@ -1,6 +1,7 @@
 #include "Chair.h"
 
-Chair::Chair() : xrot(0.0f), yrot(0.0f), zrot(0.0f), scale(0.2f) {
+Chair::Chair(int chairNumber) : xrot(0.0f), yrot(0.0f), zrot(0.0f), scale(0.2f) {
+	chairNo = chairNumber;
 }
 
 void Chair::chairLegs()
@@ -105,7 +106,14 @@ void Chair::Display()
 
 	glBindTexture(GL_TEXTURE_2D, leatherTx);
 
-	glTranslatef(150.0f, 0.0f, -50.0f);
+	if (chairNo == 0) {
+		glTranslatef(200.0f, 0.0f, -50.0f);
+	}
+	else {
+		glTranslatef(75.0f, 0.0f, -50.0f);
+		glRotatef(180, 0.0f, 1.0f, 0.0f);
+	}
+
 	glColor3ub(255, 255, 255);
 
 	glRotatef(zrot, 0.0f, 0.0f, 1.0f);

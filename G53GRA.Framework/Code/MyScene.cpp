@@ -23,8 +23,11 @@ void MyScene::Initialise()
 	Table* t = new Table();
 	AddObjectToScene(t);
 
-	Chair* c = new Chair();
+	Chair* c = new Chair(0);
 	AddObjectToScene(c);
+
+	Chair* c1 = new Chair(1);
+	AddObjectToScene(c1);
 
 	Fan* f = new Fan();
 	AddObjectToScene(f);
@@ -34,7 +37,7 @@ void MyScene::Initialise()
 }
 
 float ambient1[] = { 1.f, 0.83f, 0.65f, 0.5f };
-float diffuse1[] = { 1.f, 0.83f, 0.65f, 0.5f };
+float diffuse1[] = { 1.f, 1.0f, 1.0f, 1.0f };
 float position1[] = { -1000.f, 500.0f, -1000.0f, 1.0f };
 float mat_colour[] = { 1.f, 1.f, 1.f, 0.5f };
 float mat_ambient[] = { 1.f, 1.f, 1.f, 0.5f };
@@ -54,7 +57,7 @@ void lighting() {
 
 	glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, spot_direction);
 	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 35.f);
-	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 10.f);
+	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 25.f);
 
 
 	glEnable(GL_LIGHTING);
