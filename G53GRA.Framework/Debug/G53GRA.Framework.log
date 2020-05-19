@@ -1,2 +1,3 @@
-﻿  Camera.cpp
+﻿  Room.cpp
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Room.cpp(29,50): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   G53GRA.Framework.vcxproj -> C:\Users\kansr\Documents\G53GRA_coursework\Debug\G53GRA.Framework.exe

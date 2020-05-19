@@ -63,8 +63,6 @@ void Scene::Draw()
 	// Zealous reset of MODELVIEW matrix
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	// Dump silent GL errors into console output
-	CheckGLError();
 }
 
 void Scene::Reshape(int w, int h)

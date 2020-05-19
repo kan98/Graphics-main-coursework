@@ -14,12 +14,11 @@ void Table::cylinder(float h, float r)
 	{
 		glBegin(GL_QUADS);
 
-		glNormal3f(x, h, z);    // top
+		glNormal3f(x, 0.f, z);
 		glTexCoord2f(0.f, 1.f);
 		glVertex3f(x, h, z);
 
-		glNormal3f(x, 0.f, z);  // bottom
-		glTexCoord2f(0.f, 0.f);
+		glTexCoord2f(0.f, 0.f); // bottom
 		glVertex3f(x, 0.f, z);
 
 		// Iterate around circle
@@ -29,12 +28,11 @@ void Table::cylinder(float h, float r)
 		x = r * cos(t);           // move x and z around circle
 		z = r * sin(t);
 		// Close quad
-		glNormal3f(x, 0.f, z);  // bottom
+		glNormal3f(x, 0.f, z);   // bottom
 		glTexCoord2f(tc, 0.f);
 		glVertex3f(x, 0.f, z);
 
-		glNormal3f(x, h, z);    // top
-		glTexCoord2f(tc, 1.f);
+		glTexCoord2f(tc, 1.f);    // top
 		glVertex3f(x, h, z);
 		glEnd();
 	} while (t <= 2 * M_PI);        // for 360 degrees
@@ -61,109 +59,91 @@ void Table::Display()
 	glBindTexture(GL_TEXTURE_2D, tableTx);
 
 	glBegin(GL_QUADS);
-	glNormal3f(250, 0, 400);
+	glNormal3f(0, -1, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(250, 0, 400);
 
-	glNormal3f(250, 0, -400);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(250, 0, -400);
 
-	glNormal3f(-250, 0, -400);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-250, 0, -400);
 
-	glNormal3f(-250, 0, 400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-250, 0, 400);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-250, 0, 400);
+	glNormal3f(0, 1, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-250, 70, 400);
 
-	glNormal3f(-250, 0, -400);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-250, 70, -400);
 
-	glNormal3f(250, 0, -400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(250, 70, -400);
 
-	glNormal3f(250, 0, 400);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(250, 70, 400);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-250, 70, 400);
+	glNormal3f(0, 0, -1);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-250, 70, 400);
 
-	glNormal3f(-250, 0, 400);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-250, 0, 400);
 
-	glNormal3f(250, 0, 400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(250, 0, 400);
 
-	glNormal3f(250, 70, 400);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(250, 70, 400);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-250, 70, -400);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-250, 70, -400);
 
-	glNormal3f(-250, 0, -400);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-250, 0, -400);
 
-	glNormal3f(250, 0, -400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(250, 0, -400);
 
-	glNormal3f(250, 70, -400);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(250, 70, -400);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(250, 70, -400);
+	glNormal3f(0, 0, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(250, 70, -400);
 
-	glNormal3f(250, 0, -400);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(250, 0, -400);
 
-	glNormal3f(250, 0, 400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(250, 0, 400);
 
-	glNormal3f(250, 70, 400);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(250, 70, 400);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-250, 70, -400);
+	glNormal3f(-1, 0, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-250, 70, -400);
 
-	glNormal3f(-250, 0, -400);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-250, 0, -400);
 
-	glNormal3f(-250, 0, 400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-250, 0, 400);
 
-	glNormal3f(-250, 70, 400);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-250, 70, 400);
 	glEnd();

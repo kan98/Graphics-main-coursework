@@ -15,4 +15,3 @@ private:
 
 };
 
-void lighting();

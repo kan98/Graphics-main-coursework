@@ -27,19 +27,16 @@ void Piano::Display()
 
 	//Back Surface
 	glBegin(GL_QUADS);
-	glNormal3f(-800, -400, 0);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, -400, 0);
 
-	glNormal3f(-800, 1000, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, 1000, 0);
 
-	glNormal3f(800, 1000, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(800, 1000, 0);
 
-	glNormal3f(800, -400, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(800, -400, 0);
 	glEnd();
@@ -47,128 +44,107 @@ void Piano::Display()
 
 	//Side Pieces
 	glBegin(GL_QUADS);
-	glNormal3f(-800, -400, 0);
+	glNormal3f(-1, 0, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, -400, 0);
 
-	glNormal3f(-800, 1000, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-800, 1000, 0);
 
-	glNormal3f(-800, 1000, -500);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-800, 1000, -500);
 
-	glNormal3f(-800, -400, -500);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, -400, -500);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(800, -400, 0);
+	glNormal3f(1, 0, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(800, -400, 0);
 
-	glNormal3f(800, 1000, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(800, 1000, 0);
 
-	glNormal3f(800, 1000, -500);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(800, 1000, -500);
 
-	glNormal3f(800, -400, -500);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(800, -400, -500);
 	glEnd();
 
 	//Middle Bottom
 	glBegin(GL_QUADS);
-	glNormal3f(-700, -400, -400);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-700, -400, -400);
 
-	glNormal3f(-700, 400, -400);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-700, 400, -400);
 
-	glNormal3f(700, 400, -400);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(700, 400, -400);
 
-	glNormal3f(700, -400, -400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(700, -400, -400);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-800, -400, -500);
+	glNormal3f(-1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, -400, -500);
 
-	glNormal3f(-800, 400, -500);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, 400, -500);
 
-	glNormal3f(-700, 400, -500);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-700, 400, -500);
 
-	glNormal3f(-700, -400, -500);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-700, -400, -500);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(800, -400, -500);
+	glNormal3f(1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(800, -400, -500);
 
-	glNormal3f(800, 400, -500);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(800, 400, -500);
 
-	glNormal3f(700, 400, -500);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(700, 400, -500);
 
-	glNormal3f(700, -400, -500);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(700, -400, -500);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-700, -400, -400);
+	glNormal3f(-1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-700, -400, -400);
 
-	glNormal3f(-700, 400, -400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-700, 400, -400);
 
-	glNormal3f(-700, 400, -500);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-700, 400, -500);
 
-	glNormal3f(-700, -400, -500);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-700, -400, -500);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(700, -400, -400);
+	glNormal3f(1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(700, -400, -400);
 
-	glNormal3f(700, 400, -400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(700, 400, -400);
 
-	glNormal3f(700, 400, -500);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(700, 400, -500);
 
-	glNormal3f(700, -400, -500);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(700, -400, -500);
 	glEnd();
@@ -177,91 +153,76 @@ void Piano::Display()
 	glPushMatrix();
 	glTranslatef(0.f, 1000.f, 0.f);
 	glBegin(GL_QUADS);
-	glNormal3f(-900, 30, 0);
+	glNormal3f(0, 1, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-900, 30, 0);
 
-	glNormal3f(-900, 30, -600);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-900, 30, -600);
 
-	glNormal3f(900, 30, -600);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(900, 30, -600);
 
-	glNormal3f(900, 30, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(900, 30, 0);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-900, 0, -600);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-900, 0, -600);
 
-	glNormal3f(-900, 30, -600);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-900, 30, -600);
 
-	glNormal3f(900, 30, -600);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(900, 30, -600);
 
-	glNormal3f(900, 0, -600);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(900, 0, -600);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(900, 0, 0);
+	glNormal3f(1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(900, 0, 0);
 
-	glNormal3f(900, 0, -600);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(900, 0, -600);
 
-	glNormal3f(900, 30, -600);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(900, 30, -600);
 
-	glNormal3f(900, 30, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(900, 30, 0);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-900, 0, 0);
+	glNormal3f(-1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-900, 0, 0);
 
-	glNormal3f(-900, 0, -600);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-900, 0, -600);
 
-	glNormal3f(-900, 30, -600);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-900, 30, -600);
 
-	glNormal3f(-900, 30, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-900, 30, 0);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-900, 0, 0);
+	glNormal3f(0, -1, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-900, 0, 0);
 
-	glNormal3f(-900, 0, -600);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-900, 0, -600);
 
-	glNormal3f(900, 0, -600);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(900, 0, -600);
 
-	glNormal3f(900, 0, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(900, 0, 0);
 	glEnd();
@@ -294,109 +255,91 @@ void Piano::Display()
 	glTranslatef(0.f, 400.f, 0.f);
 
 	glBegin(GL_QUADS);
-	glNormal3f(-800, 600, -200);
+	glNormal3f(0, 1, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, 600, -200);
 
-	glNormal3f(-800, 0, -400);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, 0, -400);
 
-	glNormal3f(800, 0, -400);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(800, 0, -400);
 
-	glNormal3f(800, 600, -200);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(800, 600, -200);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-800, 0, -700);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, 0, -700);
 
-	glNormal3f(-800, -200, -700);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, -200, -700);
 
-	glNormal3f(800, -200, -700);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(800, -200, -700);
 
-	glNormal3f(800, 0, -700);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(800, 0, -700);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-800, 0, 0);
+	glNormal3f(0, 1, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, 0, 0);
 
-	glNormal3f(-800, 0, -700);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, 0, -700);
 
-	glNormal3f(800, 0, -700);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(800, 0, -700);
 
-	glNormal3f(800, 0, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(800, 0, 0);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-800, -200, 0);
+	glNormal3f(0, -1, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, -200, 0);
 
-	glNormal3f(-800, -200, -700);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, -200, -700);
 
-	glNormal3f(800, -200, -700);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(800, -200, -700);
 
-	glNormal3f(800, -200, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(800, -200, 0);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(800, 0, -500);
+	glNormal3f(1, 0, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(800, 0, -500);
 
-	glNormal3f(800, 0, -700);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(800, 0, -700);
 
-	glNormal3f(800, -200, -700);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(800, -200, -700);
 
-	glNormal3f(800, -200, -500);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(800, -200, -500);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-800, 0, -500);
+	glNormal3f(-1, 0, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-800, 0, -500);
 
-	glNormal3f(-800, 0, -700);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-800, 0, -700);
 
-	glNormal3f(-800, -200, -700);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-800, -200, -700);
 
-	glNormal3f(-800, -200, -500);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-800, -200, -500);
 	glEnd();
@@ -418,19 +361,16 @@ void keys() {
 	glBindTexture(GL_TEXTURE_2D, keysTx);
 
 	glBegin(GL_QUADS);
-	glNormal3f(-750, 20, -500);
+	glNormal3f(0, 1, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-750, 20, -500);
 
-	glNormal3f(-750, 20, -675);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-750, 20, -675);
 
-	glNormal3f(750, 20, -675);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(750, 20, -675);
 
-	glNormal3f(750, 20, -500);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(750, 20, -500);
 	glEnd();
@@ -439,19 +379,16 @@ void keys() {
 	glBindTexture(GL_TEXTURE_2D, sideKeysTx);
 
 	glBegin(GL_QUADS);
-	glNormal3f(-750, 0, -675);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-750, 0, -675);
 
-	glNormal3f(-750, 20, -675);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-750, 20, -675);
 
-	glNormal3f(750, 20, -675);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(750, 20, -675);
 
-	glNormal3f(750, 0, -675);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(750, 0, -675);
 	glEnd();
@@ -460,91 +397,76 @@ void keys() {
 void pedal(int pressed) {
 	int height = -30 * pressed;
 	glBegin(GL_QUADS);
-	glNormal3f(-40, height, -150);
+	glNormal3f(0, 1, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-40, height, -150);
 
-	glNormal3f(-30, 0, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-30, 0, 0);
 
-	glNormal3f(30, 0, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(30, 0, 0);
 
-	glNormal3f(40, height, -150);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(40, height, -150);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-40, -20 + height, -150);
+	glNormal3f(-1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-40, -20 + height, -150);
 
-	glNormal3f(-30, height, -150);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-30, height, -150);
 
-	glNormal3f(-30, 0, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(-30, 0, 0);
 
-	glNormal3f(-40, -20, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(-40, -20, 0);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(40, -20 + height, -150);
+	glNormal3f(1, 0, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(40, -20 + height, -150);
 
-	glNormal3f(30, height, -150);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(30, height, -150);
 
-	glNormal3f(30, 0, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(30, 0, 0);
 
-	glNormal3f(40, -20, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(40, -20, 0);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-40, -20 + height, -150);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-40, -20 + height, -150);
 
-	glNormal3f(-40, height, -150);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-40, height, -150);
 
-	glNormal3f(40, height, -150);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(40, height, -150);
 
-	glNormal3f(40, -20 + height, -150);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(40, -20 + height, -150);
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glNormal3f(-40, -20 + height, -150);
+	glNormal3f(0, -1, 0);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(-40, -20 + height, -150);
 
-	glNormal3f(-30, -20, 0);
 	glTexCoord2f(0.f, 1.f);
 	glVertex3d(-30, -20, 0);
 
-	glNormal3f(30, -20, 0);
 	glTexCoord2f(1.f, 1.f);
 	glVertex3d(30, -20, 0);
 
-	glNormal3f(40, -20 + height, -150);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(40, -20 + height, -150);
 	glEnd();

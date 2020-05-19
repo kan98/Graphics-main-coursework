@@ -63,6 +63,7 @@ void Fan::Display()
 			float ratio = zValue / 112500;
 			zValue *= 1 - (0.5 * ratio);
 
+			glNormal3f(0, 0, 1);
 			glVertex3f(0, j / 1000, -zValue / 700);
 		}
 		glEnd();
@@ -84,6 +85,7 @@ void Fan::Display()
 			float ratio = zValue / 112500;
 			zValue *= 1 - (0.5 * ratio);
 
+			glNormal3f(0, 0, -1);
 			glVertex3f(0, j / 1000, zValue / 700);
 		}
 		glEnd();
@@ -97,9 +99,9 @@ void Fan::Display()
 	int bladeTx = Scene::GetTexture("./Textures/plastic.bmp");
 	glEnable(GL_TEXTURE_2D);
 
-	glBindTexture(GL_TEXTURE_2D, bladeTx);
-
 	glColor3ub(255, 255, 255);
+
+	glBindTexture(GL_TEXTURE_2D, bladeTx);
 
 	// Fan Blades
 	glRotatef(time, 0.0f, 0.0f, 1.0f);
@@ -121,15 +123,13 @@ void fanBlade() {
 	glPushMatrix();
 
 	glBegin(GL_TRIANGLES);
-	glNormal3f(35, 35, 0);
+	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 0.f);
 	glVertex3d(35, 35, 0);
 
-	glNormal3f(150, 75, 0);
 	glTexCoord2f(1.f, 0.f);
 	glVertex3d(150, 75, 0);
 
-	glNormal3f(75, 150, 0);
 	glTexCoord2f(0.0f, 1.f);
 	glVertex3d(75, 150, 0);
 	glEnd();
@@ -148,6 +148,7 @@ void drawCircle(int scale, GLenum drawType)
 		double theta = 2 * 3.1415 * i / 300;
 		float tx = (scale * cos(theta)) * 0.5 + 0.5;
 		float ty = (scale * sin(theta)) * 0.5 + 0.5;
+		glNormal3f(0, 0, 1);
 		glTexCoord2f(tx, ty);
 		glVertex2d(scale * cos(theta), scale * sin(theta));
 	}
