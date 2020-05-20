@@ -109,7 +109,7 @@ void Chair::Display()
 
 	glDisable(GL_CULL_FACE);
 
-	// Where you sit on
+	// Chair seat
 	glPushMatrix();
 
 	glBegin(GL_POLYGON);
@@ -238,6 +238,7 @@ void Chair::Display()
 
 	glBindTexture(GL_TEXTURE_2D, leatherTx);
 
+	// Back seat
 	glBegin(GL_POLYGON);
 	glNormal3f(0, 0, 1);
 	glTexCoord2f(0.f, 0.f);

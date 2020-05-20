@@ -1,3 +1,30 @@
-﻿  Room.cpp
+﻿  main.cpp
+  MyScene.cpp
+  Fan.cpp
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Fan.cpp(67,31): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Fan.cpp(90,31): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Fan.cpp(153,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Fan.cpp(154,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Engine.cpp
+  Scene.cpp
+  Camera.cpp
+  Texture.cpp
+  Chair.cpp
+  Table.cpp
+  Sphere.cpp
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(18,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(24,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(34,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(44,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(59,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(94,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(95,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(96,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(97,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(98,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Sphere.cpp(99,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Piano.cpp
+  Room.cpp
 C:\Users\kansr\Documents\G53GRA_coursework\G53GRA.Framework\Code\objects\Room.cpp(29,50): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Generating Code...
   G53GRA.Framework.vcxproj -> C:\Users\kansr\Documents\G53GRA_coursework\Debug\G53GRA.Framework.exe

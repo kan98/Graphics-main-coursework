@@ -58,6 +58,8 @@ void Table::Display()
 
 	glBindTexture(GL_TEXTURE_2D, tableTx);
 
+
+	// Table (not legs)
 	glBegin(GL_QUADS);
 	glNormal3f(0, -1, 0);
 	glTexCoord2f(1.f, 1.f);
@@ -153,6 +155,7 @@ void Table::Display()
 
 	glBindTexture(GL_TEXTURE_2D, legsTx);
 
+	// Table legs
 	glPushMatrix();
 	glTranslatef(200.0f, 0.0f, 350.0f);
 	cylinder(-300, 30);

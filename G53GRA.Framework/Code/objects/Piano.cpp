@@ -149,7 +149,7 @@ void Piano::Display()
 	glVertex3d(700, -400, -500);
 	glEnd();
 
-	//Top bit
+	//Top area
 	glPushMatrix();
 	glTranslatef(0.f, 1000.f, 0.f);
 	glBegin(GL_QUADS);
@@ -250,7 +250,7 @@ void Piano::Display()
 	glBindTexture(GL_TEXTURE_2D, pianoTx);
 	glPopMatrix();
 
-	//Middle bit
+	//Middle top
 	glPushMatrix();
 	glTranslatef(0.f, 400.f, 0.f);
 

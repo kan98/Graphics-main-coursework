@@ -58,6 +58,7 @@ void Room::Display()
 
 	glBindTexture(GL_TEXTURE_2D, carpetTx);
 
+	// Floor
 	for (int i = -200; i < 3000; i+=1600) {
 		for (int j = -3000; j < 400; j += 1200) {
 			glBegin(GL_QUADS);
@@ -82,6 +83,7 @@ void Room::Display()
 	int brickTx = Scene::GetTexture("./Textures/brick.bmp");
 	glBindTexture(GL_TEXTURE_2D, brickTx);
 
+	//Back Wall
 	for (int i = -200; i < 3000; i += 800) {
 		for (int j = 0; j < 3000; j += 1000) {
 			glBegin(GL_QUADS);
@@ -103,6 +105,7 @@ void Room::Display()
 		}
 	}
 
+	// Right Wall
 	for (int i = 0; i < 3000; i += 1000) {
 		for (int j = -3000; j < 400; j += 1200) {
 			glBegin(GL_QUADS);

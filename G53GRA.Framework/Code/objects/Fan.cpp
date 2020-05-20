@@ -27,11 +27,13 @@ void Fan::Display()
 
 	glRotatef(90, 0.0f, 1.0f, 0.0f);
 
+	// Start from the bottom up
 	glPushMatrix();
 	glRotatef(90, 1.0f, 0.0f, 0.0f);
 	drawCircle(100, GL_POLYGON);
 	glPopMatrix();
 
+	// Fan base
 	Table table;
 	table.cylinder(700, 30);
 
@@ -52,6 +54,7 @@ void Fan::Display()
 
 	glPushMatrix();
 
+	// Fan grills front
 	for (int i = 0; i < 4; i++) {
 		glBegin(GL_LINE_STRIP);
 		for (float j = 0; j < 225 * 1000; j++) {
@@ -74,6 +77,7 @@ void Fan::Display()
 
 	glPushMatrix();
 
+	// Fan grills back
 	for (int i = 0; i < 4; i++) {
 		glBegin(GL_LINE_STRIP);
 		for (float j = 0; j < 225 * 1000; j++) {
